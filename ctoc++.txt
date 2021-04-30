@@ -1,0 +1,115 @@
+// printf = cout << "samit" << endl;
+// scanf = cin >> variable name;
+// struct = class and add public:
+// x +=1 = x++  (in loops)
+// dont have to put return 0;
+// cout << ++x / x++ << endl; // adds before / after
+// rand() from cstdlib ; random number
+// if you want specfic range (n) rand()%n and then 1 + (rand() % 6) to actually get upto the number you want
+// srand(43) to change the order (#include <cstdlib>)
+
+
+// using standard library
+using namespace std;
+
+int x = 69; // global
+int main()
+{
+    int x = 14;          // local
+    cout << ::x << endl; // :: = use global else use local
+
+}
+
+& = address
+* = only when declaring a pointer.
+
+
+	int a = 5;
+	cout << &a << endl;
+
+	// pointer
+	int *aPointer;
+	aPointer = &a;
+	cout << aPointer << endl;
+
+// const = cant be modified. (tuples)
+
+//const objects need const functions.
+// string working
+	string str = "aaas";
+	//indexing a[0], you can assign it also.
+	// single quotes bcs character : str[0] = 'a' 
+	// size : a.size()
+	// iteration
+	// for(int i =0; i<str.size(); ++i){
+	// 	cout << str[i] << endl;
+	// }
+
+	// string reverse
+	string str;
+	cin >> str;
+	string str_rev;
+	for(int i = str.size() - 1; i>=0; --i){
+		//str_rev += str[i]; // adding string to character. (shouldn't do)
+		// use .pushback() instead = adds character
+		str_rev.push_back(str[i]); // better.
+	}
+	cout << str_rev;
+
+last index of string s = [size(s)-1]
+lat value = s[size(s)-1]
+
+	// array size
+	// size should be less than 10^5
+	// if more than that, then declare the variable globally
+	// const int n = 1e7 (never changes, global variable, works!)
+
+//Classes
+
+class Student
+{
+public:
+	int id;
+	float salary;
+	string name;
+
+	void insert(int i, string n, float s)
+	{
+		id = i;
+		name = n;
+		salary = s;
+
+	}
+	void display(){
+		cout <<id<<" "<< name << " " << salary << endl;
+
+	}
+
+	
+};
+
+int main(){
+ 	init_code();
+ 	Student s1;
+ 	Student s2;
+ 	s1.insert(12, "Samit", 1000);
+ 	s2.insert(155, "Mohan", 12000);
+ 	s1.display();
+ 	s2.display();
+
+	
+	return 0;
+
+ }
+
+// References
+
+void swap(int &a, int &b){
+	int temp = a;
+ 	a = b;
+ 	b = temp;
+
+ 	}	
+
+all datatypes are passed by value except arrays (no need to use &)
+
